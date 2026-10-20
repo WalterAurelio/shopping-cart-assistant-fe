@@ -1,11 +1,12 @@
 {
-  "printWidth": 160,
+  "printWidth": 192,
   "tabWidth": 2,
+  "trailingComma": "none",
   "plugins": [
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindFunctions": ["sortCx", "cx"],
+  "tailwindFunctions": ["sortCx", "cx", "cva"],
   "importOrder": [
     "^react$",
     "^react-dom$",
