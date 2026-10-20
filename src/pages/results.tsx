@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import type { Product } from "../components/Form";
+import type { Product } from "../schemas/productSchema";
 import Form from "../components/Form";
 
 export type ResultsState = {
