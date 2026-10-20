@@ -7,7 +7,7 @@ import Button from "../components/Button";
 
 export function HomeScreen() {
   const uploadedFiles = useFilesStore((state) => state.uploadedFiles);
-  const { mutate } = useUploadFiles();
+  const { mutate, isPending } = useUploadFiles();
 
   const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,7 +36,9 @@ export function HomeScreen() {
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <legend className="text-2xl font-bold text-white">Sube una imagen del carrito de compras</legend>
         <FileUploadProgressBar />
-        <Button className="self-end">Enviar archivos</Button>
+        <Button state={isPending ? "disabled" : "idle"} disabled={isPending} className="self-end">
+          {isPending ? "Subiendo..." : "Enviar imagen"}
+        </Button>
       </form>
 
       <div className="flex flex-col gap-4">
